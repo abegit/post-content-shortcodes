@@ -646,7 +646,7 @@ if( !class_exists( 'Post_Content_Shortcodes' ) ) {
 						$p->post_content = force_balance_tags( substr( $p->post_content, 0, stripos( $p->post_content, '<!--more-->' ) ) );
 				}
 				if( $atts['show_image'] ) {
-					$output .= $p->post_thumbnail;
+					$output .= '<a href="' . $this->get_shortlink_from_blog( $p->ID, $atts['blog_id'] ) . '">' . $p->post_thumbnail . '</a>';
 				}
 				if( $atts['show_excerpt'] ) {
 					$excerpt = empty( $p->post_excerpt ) ? $p->post_content : $p->post_excerpt;
